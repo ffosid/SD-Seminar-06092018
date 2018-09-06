@@ -1,7 +1,7 @@
 {
   "id": "79f17475-984d-4bad-af88-b62d96980c05",
   "name": "SD Seminar",
-  "publisher": "Default publisher",
+  "publisher": "D. E. Veloper",
   "brief": "",
   "description": "",
   "version": "1.0.0.0",
@@ -14,10 +14,13 @@
   "capabilities": [],
   "dependencies": [],
   "screenshots": [],
+  "features": "TranslationFile",
+  "showMyCode": true,
+  "target": "Internal",
   "platform": "11.0.0.0",
   "application": "11.0.0.0",
   "idRange": {
-    "from": 50100,
-    "to": 50149
+    "from": 123456700,
+    "to": 123456799
   }
 }
