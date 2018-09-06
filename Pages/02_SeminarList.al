@@ -52,15 +52,22 @@ page 123456702 "CSD Seminar List"
         }
     }
 
-    actions
+   actions
     {
-        area(processing)
+        area(Navigation)
         {
-            action(ActionName)
+            group("&Seminar")
             {
-                trigger OnAction();
-                begin
-                end;
+                action("Co&mments")
+                {
+                    //RunObject=page "Seminar Comment Sheet";
+                    //RunPageLink = "Table Name"= const(Seminar),
+                    //              "No."=field("No.");
+                    Image=Comment;
+                    Promoted=true;
+                    PromotedIsBig=true;
+                    PromotedOnly=true;
+                }
             }
         }
     }
