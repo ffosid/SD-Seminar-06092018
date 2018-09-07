@@ -2,10 +2,10 @@ page 123456702 "CSD Seminar List"
 {
     PageType = List;
     SourceTable = "CSD Seminar";
-    Caption='Seminar List';
-    Editable=false;
-    CardPageId=123456701;
-    UsageCategory=Lists;
+    Caption = 'Seminar List';
+    Editable = false;
+    CardPageId = 123456701;
+    UsageCategory = Lists;
 
     layout
     {
@@ -13,29 +13,29 @@ page 123456702 "CSD Seminar List"
         {
             repeater(Group)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
-                    
+
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
-                    
+
                 }
-                field("Seminar Duration";"Seminar Duration")
+                field("Seminar Duration"; "Seminar Duration")
                 {
-                    
+
                 }
-                field("Seminar Price";"Seminar Price")
+                field("Seminar Price"; "Seminar Price")
                 {
-                    
+
                 }
-                field("Minimum Participants";"Minimum Participants")
+                field("Minimum Participants"; "Minimum Participants")
                 {
-                    
+
                 }
-                field("Maximum Participants";"Maximum Participants")
+                field("Maximum Participants"; "Maximum Participants")
                 {
-                    
+
                 }
             }
         }
@@ -52,7 +52,7 @@ page 123456702 "CSD Seminar List"
         }
     }
 
-   actions
+    actions
     {
         area(Navigation)
         {
@@ -63,12 +63,45 @@ page 123456702 "CSD Seminar List"
                     //RunObject=page "Seminar Comment Sheet";
                     //RunPageLink = "Table Name"= const(Seminar),
                     //              "No."=field("No.");
-                    Image=Comment;
-                    Promoted=true;
-                    PromotedIsBig=true;
-                    PromotedOnly=true;
+                    Image = Comment;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    PromotedOnly = true;
                 }
+                action("Ledger Entries")
+                {
+                    Caption = 'Ledger Entries';
+                    RunObject = page "CSD Seminar Ledger Entries";
+                    RunPageLink = "Seminar No." = field ("No.");
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    ShortcutKey = "Ctrl+F7";
+                    Image = WarrantyLedger;
+                }
+                action("&Registration")
+                {
+                    Caption = '&Registration';
+                    RunObject = page "CSD Seminar Registration List";
+                    RunPageLink = "Seminar No." = field ("No.");
+                    Image = Timesheet;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                }
+
             }
         }
+        area(Processing)
+        {
+            action("Seminar Registration")
+            {
+                RunObject = page "CSD Seminar Registration";
+                RunPageLink = "Seminar No." = field ("No.");
+                RunPageMode = Create;
+                Image = NewTimesheet;
+                Promoted = true;
+                PromotedCategory = New;
+            }
+        }
+
     }
 }
